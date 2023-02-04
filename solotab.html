@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="UTF-8" />
+    <title>要事提醒页面</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-image: url("https://img1.imgtp.com/2023/02/04/KHTW5DGx.jpg");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    .box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .flex1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    #shuRuKuang {
+      border: 0;
+      border-bottom: 2px solid #fff;
+      padding: 4px 2px;
+      display: block;
+      background: 0;
+      line-height: 1.5;
+      outline: none;
+      text-align: center;
+      transition: border-color 0.2s ease-in-out;
+      border-radius: 0;
+      color: #fff;
+      font-size: 2rem;
+      max-width: 90%;
+    }
+
+    #anNiu {
+      margin-left: 0px;
+      margin-right: 10px;
+      color: #ccc;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+      text-align: center;
+      line-height: 30px;
+      cursor: pointer;
+    }
+    input::placeholder {
+      color: #ccc;
+    }
+    input::-webkit-input-placeholder {
+      color: #ccc;
+    }
+  </style>
+
+  <body>
+    <div class="flex column">
+      <div class="box">
+        <input placeholder="大美淅川，壮丽河山！" id="shuRuKuang" />
+        <span id="anNiu" onclick="change()">✔</span>
+      </div>
+      <div class="flex1">
+        <p style="color: #fff; font-size: larger; font-style: initial">
+          佛系花岗岩欢迎您
+        </p>
+        <a
+          style="color: #fff; font-size: small; font-style: inherit"
+          href="https://soloshiha.github.io/solo/"
+          >返回我的主页</a
+        >
+      </div>
+    </div>
+    <script>
+      let youShi = false;
+
+      function change() {
+        let anNiu = document.getElementById("anNiu");
+        let shuRuKuang = document.getElementById("shuRuKuang");
+
+        if (youShi) {
+          youShi = false;
+          anNiu.innerText = "✔";
+          shuRuKuang.style.borderBottomColor = "#fff";
+          shuRuKuang.value = "";
+          shuRuKuang.readOnly = false;
+          window.localStorage.removeItem("shi");
+        } else {
+          youShi = true;
+          anNiu.innerText = "✘";
+          shuRuKuang.style.borderBottomColor = "transparent";
+          shuRuKuang.readOnly = true;
+          window.localStorage.setItem("shi", shuRuKuang.value);
+        }
+      }
+      let data = window.localStorage.getItem("shi");
+      if (data) {
+        document.getElementById("shuRuKuang").value = data;
+        change();
+      }
+    </script>
+  </body>
+</html>
