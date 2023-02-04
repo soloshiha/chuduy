@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>锤纽碧影城</title>
+  </head>
+  <style>
+    body {
+      margin: 0; /*主体背景外边框 为0*/
+      height: 100vh; /*背景铺满*/
+      background-color: #eee; /*灰白色整体背景*/
+    }
+    .flex {
+      display: flex;
+    }
+    .flex1 {
+      flex: 1; /*占满比例*/
+    }
+    .column {
+      flex-direction: column; /*竖向*/
+    }
+    .yinYing {
+      box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+        rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+    }
+
+    .baiSe {
+      background-color: #fff; /*纯白色整体背景*/
+    }
+    .mg8 {
+      margin: 8px;
+    }
+    .mgr8 {
+      margin: 8px;
+    }
+    .mgt8 {
+      margin: 8px;
+    }
+    .shuJu {
+      height: 100px;
+    }
+    .lieBiaoXiang {
+      height: 160px;
+    }
+    .daoHang {
+      padding: 30px 40px;
+      border-bottom: 1px solid rgb(201 201 201);
+      font-size: 16px;
+      color: #666;
+    }
+    .neiRong::-webkit-scrollbar {
+      display: none; /* 支持chrome safari*/
+    }
+
+    @media (max-wideth: 600px) {
+      .ceBian {
+        /*屏幕宽度低于600px 需要做出的适应性调整*/
+        display: none;
+      }
+      .neiRong {
+        flex-direction: column;
+      }
+      .shuJuQu {
+        flex-direction: column;
+      }
+      .youQu {
+        margin-left: 8px;
+      }
+      .shuJu {
+        margin: 0 0 8px;
+        flex: auto;
+      }
+    }
+  </style>
+
+  <body class="flex">
+    <!-- 侧边栏 -->
+    <div
+      style="width: 200px; z-index: 3"
+      class="ceBian flex column baiSe yinYing"
+    >
+      <!-- 侧边头像栏 -->
+      <div
+        style="
+          padding: 15px;
+          align-items: center;
+          justify-content: center;
+          border-bottom: 1px solid #999;
+        "
+        class="flex"
+      >
+        <img
+          src="https://img1.imgtp.com/2023/02/03/TSIY3W8E.png"
+          alt="logo"
+          width="50px"
+          height="50px"
+        />
+        <div
+          style="margin-left: 15px; font-size: 14px; color: rgb(0, 0, 0)"
+          class="column"
+        >
+          佛系花岗岩
+          <div style="margin-left: 12px; font-size: 14px">欢迎您！</div>
+        </div>
+      </div>
+      <!-- 导航栏 -->
+      <div class="flex1">
+        <div class="daoHang" style="color: rgb(236, 6, 6)">正在热映！！！</div>
+        <div class="daoHang" style="color: rgb(11, 111, 204)">熊出没</div>
+        <div class="daoHang" style="color: rgb(228, 86, 20)">流浪地球2</div>
+        <div class="daoHang" style="color: rgb(153, 5, 121)">深海</div>
+        <div class="daoHang" style="color: rgb(5, 87, 16)">交换人生</div>
+        <div class="daoHang" style="color: rgb(194, 10, 10)">满江红</div>
+        <div class="daoHang" style="color: rgb(0, 0, 0)">无名</div>
+      </div>
+    </div>
+    <!-- 主区域 -->
+    <div class="flex flex1 column">
+      <!-- 头部栏 -->
+      <div style="height: 80px; z-index: 2" class="baiSe yinYing">
+        <div style="margin: auto">
+          <p style="color: rgb(255, 0, 0); font-size: x-large">
+            锤 纽 碧 影城欢迎您，黄金广告位........招租
+          </p>
+        </div>
+      </div>
+      <!-- 内容区 -->
+      <div class="flex flex1 neiRong" style="overflow: auto">
+        <!-- 左区 -->
+        <div style="flex: 3" class="flex column mg8">
+          <!--数据区-->
+          <div class="flex shuJuQu">
+            <!--四个小块-->
+            <div class="shuJu baiSe yinYing flex1 mgr8">
+              <div style="margin: auto; color: rgb(41, 3, 148)">一号杜比厅</div>
+            </div>
+            <div class="shuJu baiSe yinYing flex1 mgr8">
+              <div style="margin: auto; color: rgb(0, 92, 49)">二号VIP厅</div>
+            </div>
+            <div class="shuJu baiSe yinYing flex1 mgr8">
+              <div style="margin: auto; color: rgb(248, 101, 3)">
+                三号巨幕厅
+              </div>
+            </div>
+            <div class="shuJu baiSe yinYing flex1 mgr8">
+              <div style="margin: auto; color: rgb(1, 189, 73)">四号3D厅</div>
+            </div>
+          </div>
+          <!-- 列表区，列表数据可以无限增加 -->
+          <div class="flex column">
+            <!-- 列表项-->
+            <div class="lieBiaoXiang mgt8 baiSe yinYing">
+              <div style="margin: 60px 150px; color: rgb(2, 53, 17)">
+                酒水：
+              </div>
+            </div>
+            <div class="lieBiaoXiang mgt8 baiSe yinYing">
+              <div style="margin: 60px 150px; color: rgb(3, 52, 143)">
+                饮料：
+              </div>
+            </div>
+            <div class="lieBiaoXiang mgt8 baiSe yinYing">
+              <div style="margin: 60px 150px; color: rgb(231, 34, 143)">
+                爆米花：
+              </div>
+            </div>
+            <div class="lieBiaoXiang mgt8 baiSe yinYing">
+              <div style="margin: 60px 150px; color: cornflowerblue">
+                零食：
+              </div>
+            </div>
+            <div class="lieBiaoXiang mgt8 baiSe yinYing">
+              <div style="margin: 60px 150px"></div>
+            </div>
+            <div class="lieBiaoXiang mgt8 baiSe yinYing">
+              <div style="margin: 60px 150px"></div>
+            </div>
+          </div>
+        </div>
+        <!--右区-->
+        <div style="flex: 1" class="youQu flex column mgr8 mgt8">
+          <!-- 提示区 -->
+          <div style="height: 300px" class="baiSe yin Ying">
+            <div style="margin: 15px 15px">剧情简介：</div>
+          </div>
+          <!-- 消息区-->
+          <div style="height: 350px" class="mgt8 baiSe yinYing">
+            <div style="margin: 15px 15px">评论区留言：</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
